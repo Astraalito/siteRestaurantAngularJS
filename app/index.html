@@ -2,12 +2,15 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>TP Restaurants </title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
+    <!-- CSS, cf : https://purecss.io/ -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
@@ -25,13 +28,12 @@
 
 <script src="app.js"></script>
 <script src="/graphics/tableau/tableau.js"></script>
+<script src="/graphics/tableau/detail.js"></script>
 <script src="/graphics/formulaire/formulaire.js"></script>
 
 <!-- endscripts -->
 
 <body ng-controller="MainController">
 <tableau lesrestaurants="restaurants"></tableau>
-
-<monform></monform>
 </body>
 </html>

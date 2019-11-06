@@ -1,23 +1,27 @@
-<table>
+<h1> Restaurants </h1>
+<table class="pure-table">
     <thead>
     <tr>
         <th>Nom</th>
         <th>Adresse</th>
         <th>Date</th>
         <th>Note</th>
-        <th ng-show="IsVisible">Propriétaire</th>
-        <th ng-show="IsVisible">Contact</th>
+        <th></th>
+
     </tr>
     </thead>
     <tbody>
-    <tr ng-click="showThis()" ng-repeat="r in restaurants"> <!--affichage du tableau de restaurants-->
-        <td>{{r.nom}}</td>
+    <tr ng-repeat="r in restaurants" > <!--affichage du tableau de restaurants-->
+        <td ng-click="selectRestaurants(r)">{{r.nom}}</td>
         <td>{{r.numVoie}} {{r.libVoie}}</td>
         <td>{{r.date}}</td>
         <td>{{r.note}}</td>
-        <td ng-show="IsVisible"> {{r.proprio}}</td>
-        <td ng-show="IsVisible"> {{r.mail}}</td>
-        <!-- <td ng-show="IsVisible"><input type="button" ng-click="hideThis()" ></td>  cacher les infos -->
+        <td ng-click="showThis()"> <input type="button" value="Infos"></td>
+        <td ng-show="IsVisible"><detail restaus="r" ></detail></td>
+        <!-- bouton en + pour cacher les infos-->
+        <td ng-show="IsVisible"> <input type="button" value="Moins" ng-click="hideThis()"></td>
     </tr>
     </tbody>
 </table> <br>
+
+<monForm restaurant="restaurant"></monForm>
