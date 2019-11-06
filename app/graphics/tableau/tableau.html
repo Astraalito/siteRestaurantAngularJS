@@ -1,0 +1,23 @@
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Adresse</th>
+        <th>Date</th>
+        <th>Note</th>
+        <th ng-show="IsVisible">Propriétaire</th>
+        <th ng-show="IsVisible">Contact</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-click="showThis()" ng-repeat="r in restaurants"> <!--affichage du tableau de restaurants-->
+        <td>{{r.nom}}</td>
+        <td>{{r.numVoie}} {{r.libVoie}}</td>
+        <td>{{r.date}}</td>
+        <td>{{r.note}}</td>
+        <td ng-show="IsVisible"> {{r.proprio}}</td>
+        <td ng-show="IsVisible"> {{r.mail}}</td>
+        <!-- <td ng-show="IsVisible"><input type="button" ng-click="hideThis()" ></td>  cacher les infos -->
+    </tr>
+    </tbody>
+</table> <br>

@@ -1,0 +1,25 @@
+<div ng-show="FormVisible">
+    <form name="myForm" novalidate ng-submit="$ctrl.submit()">
+        <div>
+            <span>Date : </span>
+            <input type="text" ng-model="$ctrl.restaurant.date"/>
+            <span ng-show="myForm.date.$dirty && myForm.date.$invalid && myForm.date.$error.required ">
+          Champs obligatoire
+        </span>
+        </div>
+        <div>
+            <span>Note :</span>
+            <input type="text" ng-model="$ctrl.restaurant.note"/>
+            <span ng-show="myForm.date.$dirty && myForm.date.$invalid && myForm.date.$error.required ">
+          Champs obligatoire
+        </span>
+        </div>
+        <div>
+            <span>Commentaire : </span>
+            <input type="text" ng-model="$ctrl.restaurant.commentaire"/>
+            <span ng-show="myForm.date.$dirty && myForm.date.$invalid && myForm.date.$error.required ">
+          Champs obligatoire
+        </span>
+        </div>
+    </form>
+</div>

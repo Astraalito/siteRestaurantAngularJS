@@ -5,7 +5,7 @@ angular.module('myApp', [])
 .controller('MainController', ['$scope', function($scope){
   /*variable de test*/
   $scope.jpp = 'Antoine';
-
+  $scope.pute = "SUCEPUTE";
   $scope.restaurants=[{
     nom : 'DeliceLand',
     numVoie : '3 ',
@@ -36,5 +36,18 @@ angular.module('myApp', [])
       mail : ' unjourjetrouveraiuneadressemail@hotmail.fr',
       commentaire: 'Rarement mangé de si bonne choucroute.'
     }];
+
+  $scope.IsVisible = false;
+  $scope.FormVisible = false;
+
+  $scope.showThis = function(){
+    this.IsVisible = true;
+  };
+  $scope.hideThis = function(){
+    this.IsVisible = false;
+  };
+  $scope.showForm = function(){
+    this.FormVisible = true;
+  };
 
 }]);

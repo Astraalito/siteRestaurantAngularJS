@@ -17,31 +17,21 @@
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="core/version/version.js"></script>
   <script src="core/version/version-directive.js"></script>
   <script src="core/version/interpolate-filter.js"></script>
-<!-- persos-->
+
+<script src="app.js"></script>
+<script src="/graphics/tableau/tableau.js"></script>
+<script src="/graphics/formulaire/formulaire.js"></script>
+
 <!-- endscripts -->
 
 <body ng-controller="MainController">
- <table>
-  <thead>
-  <tr>
-      <th colspan="4">Restaurants</th>
-  </tr>
-  </thead>
-  <tbody ng-repeat="r in restaurants"> <!-- affichage du tableau de restaurant-->
-  <tr>
-      <td>{{r.nom}}</td>
-      <td>{{r.numVoie}} {{r.libVoie}}</td>
-      <td>{{r.date}}</td>
-      <td>{{r.note}}</td>
-  </tr>
-  </tbody>
-</table>
+<tableau lesrestaurants="restaurants"></tableau>
 
+<monform></monform>
 </body>
 </html>
