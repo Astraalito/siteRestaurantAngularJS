@@ -1,26 +1,26 @@
 var  myModule = angular.module('myApp');
-
-myModule.directive('tableau', [function () {
+myModule.directive('tableau', ['restaurantService',function() {
     return{
         scope:{
-            jpp: '=',
             restaurants: '=lesrestaurants'
         },
         templateUrl:'/graphics/tableau/tableau.html',
         link: function (scope, element, attrs) {
+            //Booléen pour désactiver/activer la visibilité des informations (proprio et mail)
             scope.IsVisible = false;
 
             scope.selectRestaurants = function (r) {
                 scope.restaurant = r;
-                console.log(r);
             };
+
+            //Montrer
             scope.showThis = function(){
                 this.IsVisible = true;
-                console.log('IsVisible now true');
             };
+
+            //Cacher
             scope.hideThis = function(){
                 this.IsVisible = false;
-                console.log('IsVisible now false');
             };
         },
     };

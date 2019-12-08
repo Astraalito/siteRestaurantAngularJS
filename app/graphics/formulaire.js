@@ -1,4 +1,4 @@
-myModule.directive('monform', [function () {
+myModule.directive('monform', ['restaurantService', function (restaurantService) {
     return{
         templateUrl: '/graphics/formulaire/formulaire.html',
         scope:{
@@ -7,14 +7,20 @@ myModule.directive('monform', [function () {
         link: function (scope, element, attrs) {
         scope.$watch(()=>scope.restaurant, function(){
             scope.monrestaurant=angular.copy(scope.restaurant);
-            console.log(scope.restaurant);
+            scope.myForm.$setPristine();
             });
+        scope.creer=function(){
+          scope.monrestaurant={};
+          scope.myForm.$setPristine();
+        };
         scope.valider=function(){
             angular.copy(scope.monrestaurant, scope.restaurant);
-            console.log("validey");
+            scope.myForm.$setPristine();
         };
+
         scope.annuler=function(){
             scope.monrestaurant=angular.copy(scope.restaurant);
+            scope.myForm.$setPristine();
         };
       }
     }
